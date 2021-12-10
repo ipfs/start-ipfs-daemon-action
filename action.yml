@@ -1,0 +1,13 @@
+name: 'Start IPFS Daemon'
+description: 'Start IPFS daemon and wait for it to become ready'
+inputs:
+  args:
+    description: 'Arguments that should be passed to the ipfs daemon command'
+    required: false
+    default: '--init --init-profile server'
+runs:
+  using: 'composite'
+  steps:
+    - run: |
+        ( ipfs daemon ${{ inputs.args }} & ) | grep -q 'Daemon is ready'
+      shell: bash

@@ -1,0 +1,16 @@
+name: Test Download
+on: [push]
+jobs:
+  Use-Action:
+    name: Use Action
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: start-ipfs-daemon-action
+      - uses: protocol/download-ipfs-distribution-action@master
+      - uses: ./start-ipfs-daemon-action

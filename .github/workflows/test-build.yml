@@ -1,0 +1,21 @@
+name: Test Build
+on: [push]
+jobs:
+  Use-Action:
+    name: Use Action
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          path: start-ipfs-daemon-action
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.16.x'
+      - uses: protocol/cache-go-action@master
+      - run: go install github.com/ipfs/go-ipfs/cmd/ipfs@latest
+        shell: bash
+      - uses: ./start-ipfs-daemon-action
