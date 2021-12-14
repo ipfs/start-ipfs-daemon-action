@@ -11,8 +11,8 @@ The action starts IPFS daemon and waits for it to become ready.
 ## Example
 
 ```
-- uses: protocol/download-ipfs-distribution-action@master
-- uses: protocol/start-ipfs-daemon-action@master
+- uses: ipfs/download-ipfs-distribution-action@master
+- uses: ipfs/start-ipfs-daemon-action@master
 ```
 
 ```
@@ -22,5 +22,5 @@ The action starts IPFS daemon and waits for it to become ready.
 - uses: protocol/cache-go-action@master
 - run: go install github.com/ipfs/go-ipfs/cmd/ipfs@latest
   shell: bash
-- uses: protocol/start-ipfs-daemon-action@master
+- uses: ipfs/start-ipfs-daemon-action@master
 ```

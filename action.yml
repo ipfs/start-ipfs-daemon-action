@@ -8,6 +8,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - if: ${{ runner.os == 'Linux' }}
+      run: |
+        sudo sysctl -w net.core.rmem_max=2500000
+      shell: bash
     - run: |
         ( ipfs daemon ${{ inputs.args }} & ) | grep -q 'Daemon is ready'
       shell: bash
