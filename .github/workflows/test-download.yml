@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: start-ipfs-daemon-action
-      - uses: ipfs/download-ipfs-distribution-action@master
+      - uses: ipfs/download-ipfs-distribution-action@v1
       - uses: ./start-ipfs-daemon-action
