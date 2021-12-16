@@ -5,6 +5,10 @@ inputs:
     description: 'Arguments that should be passed to the ipfs daemon command'
     required: false
     default: '--init --init-profile server'
+  wait-for-addrs:
+    description: 'Whether waits for addresses to be assigned to the daemon(defaults to true)'
+    required: false
+    default: true
 runs:
   using: 'composite'
   steps:
@@ -14,4 +18,8 @@ runs:
       shell: bash
     - run: |
         ( ipfs daemon ${{ inputs.args }} & ) | grep -q 'Daemon is ready'
+      shell: bash
+    - if: ${{ inputs.wait-for-addrs == 'true' }}
+      run: |
+        while [[ "$(ipfs id | jq '.Addresses | length')" == '0' ]]; do sleep 1; done
       shell: bash

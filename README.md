@@ -7,6 +7,7 @@ The action starts IPFS daemon and waits for it to become ready.
 | Name | Description | Default |
 | --- | --- | --- |
 | args | Arguments that should be passed to the ipfs daemon command | --init --init-profile server |
+| wait-for-addrs | Whether waits for addresses to be assigned to the daemon | true |
 
 ## Example
 
