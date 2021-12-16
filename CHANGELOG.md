@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - `wait-for-addrs` input that controls whether the action waits for addresses to be assigned to the daemon
 
+### Changed
+- ipfs daemon command to log both stdout and stderr
+
 ## [1.0.0] - 2021-12-14
 ### Added
 - action that calls `ipfs daemon` with provided args and waits for `Daemon is ready` on stdout

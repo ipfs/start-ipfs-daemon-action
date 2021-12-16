@@ -17,7 +17,7 @@ runs:
         sudo sysctl -w net.core.rmem_max=2500000
       shell: bash
     - run: |
-        ( ipfs daemon ${{ inputs.args }} & ) | grep -q 'Daemon is ready'
+        ( ipfs daemon ${{ inputs.args }} & ) | sed '/Daemon is ready/q'
       shell: bash
     - if: ${{ inputs.wait-for-addrs == 'true' }}
       run: |
