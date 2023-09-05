@@ -14,8 +14,7 @@ jobs:
           path: start-ipfs-daemon-action
       - uses: actions/setup-go@v4
         with:
-          go-version: '1.19.x'
-      - uses: protocol/cache-go-action@v1
+          go-version: 'oldstable'
       - run: go install github.com/ipfs/kubo/cmd/ipfs@latest
         shell: bash
       - uses: ./start-ipfs-daemon-action
