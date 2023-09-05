@@ -17,10 +17,9 @@ The action starts IPFS daemon and waits for it to become ready.
 ```
 
 ```
-- uses: actions/setup-go@v2
+- uses: actions/setup-go@v4
   with:
-    go-version: '1.16.x'
-- uses: protocol/cache-go-action@v1
+    go-version: 'stable'
 - run: go install github.com/ipfs/go-ipfs/cmd/ipfs@latest
   shell: bash
 - uses: ipfs/start-ipfs-daemon-action@v1
