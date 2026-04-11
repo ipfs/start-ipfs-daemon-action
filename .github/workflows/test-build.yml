@@ -9,10 +9,10 @@ jobs:
         os: [macos-latest, ubuntu-latest, windows-latest]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
         with:
           path: start-ipfs-daemon-action
-      - uses: actions/setup-go@v4
+      - uses: actions/setup-go@v6
         with:
           go-version: 'oldstable'
       - run: go install github.com/ipfs/kubo/cmd/ipfs@latest
