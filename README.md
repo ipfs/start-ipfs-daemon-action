@@ -17,7 +17,7 @@ The action starts IPFS daemon and waits for it to become ready.
 ```
 
 ```
-- uses: actions/setup-go@v4
+- uses: actions/setup-go@v6
   with:
     go-version: 'stable'
 - uses: actions/checkout@v6
