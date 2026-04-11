@@ -20,7 +20,14 @@ The action starts IPFS daemon and waits for it to become ready.
 - uses: actions/setup-go@v4
   with:
     go-version: 'stable'
-- run: go install github.com/ipfs/go-ipfs/cmd/ipfs@latest
+- uses: actions/checkout@v6
+  with:
+    repository: ipfs/kubo
+    path: kubo
+- run: |
+    make build
+    make install
+  working-directory: kubo
   shell: bash
 - uses: ipfs/start-ipfs-daemon-action@v1
 ```
