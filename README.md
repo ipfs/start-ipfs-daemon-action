@@ -12,7 +12,7 @@ The action starts IPFS daemon and waits for it to become ready.
 ## Example
 
 ```
-- uses: ipfs/download-ipfs-distribution-action@v1
+- uses: ipfs/download-ipfs-distribution-action@v2
 - uses: ipfs/start-ipfs-daemon-action@v1
 ```
 
